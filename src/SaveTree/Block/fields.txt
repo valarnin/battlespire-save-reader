@@ -1,0 +1,161 @@
+0x3D	69	Name					32 Characters?
+0x5D	101	Strength				Int32
+0x61	105	Intelligence			Int32
+0x65	109	Willpower				Int32
+0x69	113	Agility					Int32
+0x6D	117	Endurance				Int32
+0x71	121	Personality				Int32
+0x75	125	Speed					Int32
+0x79	129	Luck					Int32
+0x7D	133	Normal Strength			Int32
+0x81	137	Normal Intelligence	    Int32
+0x85	141	Normal Willpower		Int32
+0x89	145	Normal Agility			Int32
+0x8D	149	Normal Endurance		Int32
+0x91	153	Normal Personality		Int32
+0x95	157	Normal Speed			Int32
+0x99	161	Normal Luck				Int32
+0x9D	165	Current SP				Int16
+0x9F	167	Max SP					Int16
+0xA1	169	Normal Max SP			Int16
+0xA3	171	Current Wounds			Int32
+0xA7	175	Max Wounds				Int32
+0xAB	179	Normal Max Wounds		Int32
+0xAF	183	 ???Medical				Int32
+0xB3	187	 ???Medical Count		Int32
+0xB7	191	Normal ???Medical		Int32
+0xBB	195	Jumping					Int32
+0xBF	199	Jumping Count			Int32
+0xC3	203	Normal Jumping			Int32
+0xC7	207	 ???Lockpicking			Int32
+0xCB	211	 ???Lockpicking Count	Int32
+0xCF	215	Normal ???Lockpicking	Int32
+0xD3	219	Stealth					Int32
+0xD7	223	Stealth Count			Int32
+0xDB	227	Normal Stealth			Int32
+0xDF	231	Swimming				Int32
+0xE3	235	Swimming Count			Int32
+0xE7	239	Normal Swimming			Int32
+0xEB	243	Backstabbing			Int32
+0xEF	247	Backstabbing Count		Int32
+0xF3	251	Normal Backstabbing		Int32
+0xF7	255	Dodging					Int32
+0xFB	259	Dodging Count			Int32
+0xFF	263	Normal Dodging			Int32
+0x103	267	 ???Running				Int32
+0x107	271	 ???Running Count		Int32
+0x10B	275	Normal ???Running		Int32
+0x10F	279	Destruction				Int32
+0x113	283	Destruction Count		Int32
+0x117	287	Normal Destruction		Int32
+0x11B	291	Restoration				Int32
+0x11F	295	Restoration Count		Int32
+0x123	299	Normal Restoration		Int32
+0x127	303	Illusion				Int32
+0x12B	307	Illusion Count			Int32
+0x12F	311	Normal Illusion			Int32
+0x133	315	Alteration				Int32
+0x137	319	Alteration Count		Int32
+0x13B	323	Normal Alteration		Int32
+0x13F	327	Thaumaturgy				Int32
+0x143	331	Thaumaturgy Count		Int32
+0x147	335	Normal Thaumaturgy		Int32
+0x14B	339	Mysticism				Int32
+0x14F	343	Mysticism Count			Int32
+0x153	347	Normal Mysticism		Int32
+0x157	351	Short Blade				Int32
+0x15B	355	Short Blade Count		Int32
+0x15F	359	Normal Short Blade		Int32
+0x163	363	Long Blade				Int32
+0x167	367	Long Blade Count		Int32
+0x16B	371	Normal Long Blade		Int32
+0x16F	375	Hand-to-Hand			Int32
+0x173	379	Hand-to-Hand Count		Int32
+0x177	383	Normal Hand-to-Hand		Int32
+0x17B	387	Axe					    Int32
+0x17F	391	Axe Count				Int32
+0x183	395	Normal Axe				Int32
+0x187	399	Blunt Weapon			Int32
+0x18B	403	Blunt Weapon Count		Int32
+0x18F	407	Normal Blunt Weapon		Int32
+0x193	411	Missile					Int32
+0x197	415	Missile Count			Int32
+0x19B	419	Normal Missile			Int32
+0x19F	423	Critical Strike			Int32
+0x1A3	427	Critical Strike Count	Int32
+0x1A7	431	Normal Critical Strike	Int32
+0x1B7	447	Class Name				22 Characters
+0x1CF	471	Resistance				Character
+		00001=Magic	
+		00010=Frost	
+		00100=Fire	
+		01000=Shock	
+		10000=Poison	
+0x1DC	484	Immunity				Character
+		00001=Magic	
+		00010=Frost	
+		00100=Fire	
+		01000=Shock	
+		10000=Poison	
+0x1D1	473	Acute Hearing			Character
+		00=No	
+		01=Yes	
+0x1D2	474	Spell Absorption		Character
+		00=No	
+		01=Yes	
+0x1D3	475	Rapid Healing			Character
+		00=No	
+		01=Yes	
+0x1D4	476	Regenerate Health		Character
+		00=No	
+		01=Yes	
+0x1D5	477	Regenerate SP			Character
+		00=No	
+		01=Yes	
+0x1D6	478	Atheleticism			Character
+		00=No	
+		01=Yes	
+0x1D8	480	Spell Point Mult		Character
+0x1DB	483	Adrenaline Rush			Character
+		00=No	
+		01=Yes	
+0x1DC	484	Low Tolerance			Character
+		00001=Magic	
+		00010=Frost	
+		00100=Fire	
+		01000=Shock	
+		10000=Poison	
+0x1DD	485	Critical Weakness		Character
+		00001=Magic	
+		00010=Frost	
+		00100=Fire	
+		01000=Shock	
+		10000=Poison	
+0x1DE	486	Regenerate Spell Points	Character
+		00=Yes	
+		01=No	
+0x1DF	487	Forbidden Weapon		Character
+		00001=Short	
+		00010=Long	
+		00100=Blunt	
+		01000=Axe	
+		10000=Missile	
+0x1E0	488	Forbidden Armor			Character
+		03=Heavy	
+		02=Medium	
+		01=Light	
+0x1E2	490	Forbidden Material		Character
+		09=Daedric	
+		08=Orcish	
+		etc....	
+0x1EF	503	Class Name (again)?		22 Characters
+0x210	536	Spell Point Mult		Character
+0x218	544	Forbidden Armor			Character
+0x21A	546	Forbidden Material		Character
+0x263	619	Gender					Character
+		00=Male	
+		08=Female	
+0x27B	643	Hair Picture #			Character
+0x27C	644	Mouth Picture #			Character
+0x27D	645	Eye Picture #			Character
+0x29A	674	Race (0-5)				Character
