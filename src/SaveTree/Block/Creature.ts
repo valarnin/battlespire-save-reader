@@ -412,9 +412,9 @@ export class CreatureSkillSegment implements IDeserializable {
 
     public deserializeFrom(buffer: Buffer) {
         let offset = 0;
-        this.value = buffer.readUInt32LE(0);
-        this.count = buffer.readUInt32LE(4);
-        this.normal = buffer.readUInt32LE(8);
+        this.value = buffer.readInt32LE(0);
+        this.count = buffer.readInt32LE(4);
+        this.normal = buffer.readInt32LE(8);
         return offset;
     }
 
