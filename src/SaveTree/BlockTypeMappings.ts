@@ -9,7 +9,7 @@ import SpellBlock from "./Block/Spell";
 import Unknown1Block from "./Block/Unknown1";
 import Unknown2Block from "./Block/Unknown2";
 import WorldObjectBlock from "./Block/WorldObject";
-import Unknown4Block from "./Block/Unknown4";
+import FlagsSetBlock from "./Block/FlagsSet";
 
 export type AnyBlock = CreatureBlock | BaseBlock | SkipBlock;
 
@@ -18,7 +18,7 @@ export type BlockTypeEnumType = typeof BlockTypeEnum;
 export const BlockTypeMap: {
     [key in keyof BlockTypeEnumType]: AnyBlock;
 } = {
-    'Unknown4Block': Unknown4Block.prototype,
+    'FlagsSetBlock': FlagsSetBlock.prototype,
     'ItemBlock': ItemBlock.prototype,
     'SpellBlock': SpellBlock.prototype,
     'WorldObjectBlock': WorldObjectBlock.prototype,
@@ -33,7 +33,7 @@ export const BlockTypeMap: {
 export const BlockTypeIDToBlockTypeMap: {
     [key in BlockTypeEnumType[keyof BlockTypeEnumType]]: BlockType;
 } = {
-    7: Unknown4Block.prototype,
+    7: FlagsSetBlock.prototype,
     6: ItemBlock.prototype,
     5: SpellBlock.prototype,
     4: WorldObjectBlock.prototype,

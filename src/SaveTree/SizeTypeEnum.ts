@@ -6,5 +6,5 @@ export enum SizeTypeEnum {
     Spell = 180,
     Item = 816,
     Creature = 852,
-    Unknown4 = 1266
+    FlagsSet = 1266
 }

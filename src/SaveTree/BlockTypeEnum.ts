@@ -1,5 +1,5 @@
 export enum BlockTypeEnum {
-    Unknown4Block = 7,
+    FlagsSetBlock = 7,
     ItemBlock = 6,
     SpellBlock = 5,
     WorldObjectBlock = 4,

@@ -10,7 +10,7 @@ import SpellBlock from "./Block/Spell";
 import Unknown1Block from "./Block/Unknown1";
 import Unknown2Block from "./Block/Unknown2";
 import WorldObjectBlock from "./Block/WorldObject";
-import Unknown4Block from "./Block/Unknown4";
+import FlagsSetBlock from "./Block/FlagsSet";
 import { BlockTypeEnum } from "./BlockTypeEnum";
 import { Util } from "../Util/Util";
 
@@ -32,8 +32,8 @@ export default class SaveTree implements IDeserializable {
                         block = new CreatureBlock(baseType);
                         this.blocks.push(block);
                         break;
-                    case SizeTypeEnum.Unknown4:
-                        block = new Unknown4Block(baseType);
+                    case SizeTypeEnum.FlagsSet:
+                        block = new FlagsSetBlock(baseType);
                         this.blocks.push(block);
                         break;
                     case SizeTypeEnum.Item:
@@ -67,7 +67,7 @@ export default class SaveTree implements IDeserializable {
                         }
                         break;
                 }
-                console.log(`reading block type ${BlockTypeEnum[block.type]}, ${logstr}, data ${Util.strippedStringify(block, 0)}`);
+                //console.log(`reading block type ${BlockTypeEnum[block.type]}, ${logstr}, data ${Util.strippedStringify(block, 0)}`);
             } catch (e) {
                 console.error(e);
                 return offset;
