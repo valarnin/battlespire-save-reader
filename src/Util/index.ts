@@ -1,3 +1,3 @@
-export * from './Deserialize';
-export * from './StructMap';
-export * from './Util';
+export * as Deserialize from './Deserialize';
+export * as StructMap from './StructMap';
+export * as Util from './Util';

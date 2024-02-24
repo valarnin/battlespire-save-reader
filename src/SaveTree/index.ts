@@ -1,6 +1,6 @@
-export * from './Block';
-export * from './BlockType';
-export * from './BlockTypeEnum';
-export * from './BlockTypeMappings';
-export * from './SaveTree';
-export * from './SizeTypeEnum';
+export * as Block from './Block';
+export * as BlockType from './BlockType';
+export * as BlockTypeEnum from './BlockTypeEnum';
+export * as BlockTypeMappings from './BlockTypeMappings';
+export * as SaveTree from './SaveTree';
+export * as SizeTypeEnum from './SizeTypeEnum';
