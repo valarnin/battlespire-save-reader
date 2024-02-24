@@ -1,8 +1,8 @@
-import SaveTree from './SaveTree/SaveTree';
+import SaveTree from '../SaveTree/SaveTree';
 import fs from 'fs';
 import { argv } from 'process';
-import { Util } from './Util/Util';
-import { AnyBlock } from './SaveTree/BlockTypeMappings';
+import { Util } from '../Util/Util';
+import { AnyBlock } from '../SaveTree/BlockTypeMappings';
 
 let filePath: string | undefined = undefined;
 
