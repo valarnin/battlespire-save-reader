@@ -9,9 +9,10 @@ import ItemBlock from "./Block/Item";
 import SpellBlock from "./Block/Spell";
 import Unknown1Block from "./Block/Unknown1";
 import Unknown2Block from "./Block/Unknown2";
-import Unknown3Block from "./Block/Unknown3";
+import WorldObjectBlock from "./Block/WorldObject";
 import Unknown4Block from "./Block/Unknown4";
 import { BlockTypeEnum } from "./BlockTypeEnum";
+import { Util } from "../Util/Util";
 
 export default class SaveTree implements IDeserializable {
     blocks: AnyBlock[] = [];
@@ -23,6 +24,7 @@ export default class SaveTree implements IDeserializable {
             try {
                 const baseType = new BaseBlock();
                 const baseTypeLength = baseType.deserializeFrom(buffer.subarray(offset));
+                const logstr = `offset 0x${offset.toString(16)}, length 0x${baseType.size.toString(16)}`;
                 offset += baseTypeLength;
                 let block: AnyBlock;
                 switch (baseType.size) {
@@ -42,8 +44,8 @@ export default class SaveTree implements IDeserializable {
                         block = new SpellBlock(baseType);
                         this.blocks.push(block);
                         break;
-                    case SizeTypeEnum.Unknown3:
-                        block = new Unknown3Block(baseType);
+                    case SizeTypeEnum.WorldObject:
+                        block = new WorldObjectBlock(baseType);
                         this.blocks.push(block);
                         break;
                     case SizeTypeEnum.Unknown2:
@@ -65,6 +67,7 @@ export default class SaveTree implements IDeserializable {
                         }
                         break;
                 }
+                console.log(`reading block type ${BlockTypeEnum[block.type]}, ${logstr}, data ${Util.strippedStringify(block, 0)}`);
             } catch (e) {
                 console.error(e);
                 return offset;
