@@ -14,8 +14,12 @@
             image-rendering: -moz-crisp-edges;
             image-rendering: -o-pixelated;
             image-rendering: pixelated;
-            width: 400px;
-            height: 250px;
+            width: 320px;
+            height: 200px;
+        }
+
+        .template {
+            display: none !important;
         }
     </style>
 </head>
@@ -24,7 +28,58 @@
     <div class="container-fluid mt-4">
         <div class="row">
             <!-- Right-column total progress tracker -->
-            <div class="col col-auto order-1 bsr-progress-column">t<div class="screenshot"></div>
+            <div class="col col-auto order-1 bsr-progress-column">
+                <div class="container-fluid m-0 p-0">
+                    <div class="row">
+                        <div class="screenshot"></div>
+                    </div>
+                    <div class="row">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th class="title text-center h4" colspan="3">Summary</th>
+                                </tr>
+                                <tr>
+                                    <th scope="col">Statistic</th>
+                                    <th scope="col">Current</th>
+                                    <th scope="col">Target</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Attributes</th>
+                                    <td class="summary-table progress-attributes-current"></td>
+                                    <td class="summary-table progress-attributes-target"></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Skills</th>
+                                    <td class="summary-table progress-skills-current"></td>
+                                    <td class="summary-table progress-skills-target"></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">All Spells</th>
+                                    <td class="summary-table progress-spells-current"></td>
+                                    <td class="summary-table progress-spells-target"></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">All Enchantments</th>
+                                    <td class="summary-table progress-enchantments-current"></td>
+                                    <td class="summary-table progress-enchantments-target"></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Max HP/MP</th>
+                                    <td class="summary-table progress-maxHPMP-current"></td>
+                                    <td class="summary-table progress-maxHPMP-target"></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Won Game</th>
+                                    <td class="summary-table progress-won-current">???</td>
+                                    <td class="summary-table progress-won-target">???</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
 
             <!-- Left-column individual segment detail tracker -->
@@ -32,7 +87,434 @@
                 <div class="container-fluid m-0 p-0">
                     <div class="row">
                         <div class="col col-auto bsr-saveinfo-column">
-
+                            <table class="table table-striped">
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">Save Name</th>
+                                        <td class="save-name-file save-name"></td>
+                                        <th scope="row">Character Name</th>
+                                        <td class="save-tree-file character-name"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Level</th>
+                                        <td class="save-name-file level"></td>
+                                        <th scope="row">Location</th>
+                                        <td class="save-tree-file location-summary"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Facing</th>
+                                        <td class="save-tree-file facing-summary"></td>
+                                        <th scope="row">Gender</th>
+                                        <td class="save-tree-file gender"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Class Name</th>
+                                        <td class="save-tree-file class-name"></td>
+                                        <th scope="row">Race</th>
+                                        <td class="save-tree-file race"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Wounds</th>
+                                        <td class="save-tree-file wounds-summary"></td>
+                                        <th scope="row">Spell Points</th>
+                                        <td class="save-tree-file spell-points-summary"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col col-auto bsr-attributes-column">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th class="title text-center h4" colspan="3">Attributes</th>
+                                    </tr>
+                                    <tr>
+                                        <th scope="col">Attribute</th>
+                                        <th scope="col">Current</th>
+                                        <th scope="col">Normal</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">Strength</th>
+                                        <td data-map-from="strength"></td>
+                                        <td data-map-from="normalStrength"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Intelligence</th>
+                                        <td data-map-from="intelligence"></td>
+                                        <td data-map-from="normalIntelligence"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Willpower</th>
+                                        <td data-map-from="willpower"></td>
+                                        <td data-map-from="normalWillpower"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Agility</th>
+                                        <td data-map-from="agility"></td>
+                                        <td data-map-from="normalAgility"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Endurance</th>
+                                        <td data-map-from="endurance"></td>
+                                        <td data-map-from="normalEndurance"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Personality</th>
+                                        <td data-map-from="personality"></td>
+                                        <td data-map-from="normalPersonality"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Speed</th>
+                                        <td data-map-from="speed"></td>
+                                        <td data-map-from="normalSpeed"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Luck</th>
+                                        <td data-map-from="luck"></td>
+                                        <td data-map-from="normalLuck"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col col-auto bsr-skills-column">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th class="title text-center h4" colspan="4">Skills</th>
+                                    </tr>
+                                    <tr>
+                                        <th scope="col">Skill</th>
+                                        <th scope="col">Current</th>
+                                        <th scope="col">Normal</th>
+                                        <th scope="col">Count</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">Jumping</th>
+                                        <td class="---value" data-map-from="jumping"></td>
+                                        <td class="---normal" data-map-from="jumping"></td>
+                                        <td class="---count" data-map-from="jumping"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Stealth</th>
+                                        <td class="---value" data-map-from="stealth"></td>
+                                        <td class="---normal" data-map-from="stealth"></td>
+                                        <td class="---count" data-map-from="stealth"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Swimming</th>
+                                        <td class="---value" data-map-from="swimming"></td>
+                                        <td class="---normal" data-map-from="swimming"></td>
+                                        <td class="---count" data-map-from="swimming"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Backstabbing</th>
+                                        <td class="---value" data-map-from="backstabbing"></td>
+                                        <td class="---normal" data-map-from="backstabbing"></td>
+                                        <td class="---count" data-map-from="backstabbing"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Dodging</th>
+                                        <td class="---value" data-map-from="dodging"></td>
+                                        <td class="---normal" data-map-from="dodging"></td>
+                                        <td class="---count" data-map-from="dodging"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Destruction</th>
+                                        <td class="---value" data-map-from="destruction"></td>
+                                        <td class="---normal" data-map-from="destruction"></td>
+                                        <td class="---count" data-map-from="destruction"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Restoration</th>
+                                        <td class="---value" data-map-from="restoration"></td>
+                                        <td class="---normal" data-map-from="restoration"></td>
+                                        <td class="---count" data-map-from="restoration"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Illusion</th>
+                                        <td class="---value" data-map-from="illusion"></td>
+                                        <td class="---normal" data-map-from="illusion"></td>
+                                        <td class="---count" data-map-from="illusion"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Alteration</th>
+                                        <td class="---value" data-map-from="alteration"></td>
+                                        <td class="---normal" data-map-from="alteration"></td>
+                                        <td class="---count" data-map-from="alteration"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Thaumaturgy</th>
+                                        <td class="---value" data-map-from="thaumaturgy"></td>
+                                        <td class="---normal" data-map-from="thaumaturgy"></td>
+                                        <td class="---count" data-map-from="thaumaturgy"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Mysticism</th>
+                                        <td class="---value" data-map-from="mysticism"></td>
+                                        <td class="---normal" data-map-from="mysticism"></td>
+                                        <td class="---count" data-map-from="mysticism"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Short Blade</th>
+                                        <td class="---value" data-map-from="shortBlade"></td>
+                                        <td class="---normal" data-map-from="shortBlade"></td>
+                                        <td class="---count" data-map-from="shortBlade"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Long Blade</th>
+                                        <td class="---value" data-map-from="longBlade"></td>
+                                        <td class="---normal" data-map-from="longBlade"></td>
+                                        <td class="---count" data-map-from="longBlade"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Hand To Hand</th>
+                                        <td class="---value" data-map-from="handToHand"></td>
+                                        <td class="---normal" data-map-from="handToHand"></td>
+                                        <td class="---count" data-map-from="handToHand"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Axe</th>
+                                        <td class="---value" data-map-from="axe"></td>
+                                        <td class="---normal" data-map-from="axe"></td>
+                                        <td class="---count" data-map-from="axe"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Blunt</th>
+                                        <td class="---value" data-map-from="blunt"></td>
+                                        <td class="---normal" data-map-from="blunt"></td>
+                                        <td class="---count" data-map-from="blunt"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Missile</th>
+                                        <td class="---value" data-map-from="missile"></td>
+                                        <td class="---normal" data-map-from="missile"></td>
+                                        <td class="---count" data-map-from="missile"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Critical Strike</th>
+                                        <td class="---value" data-map-from="criticalStrike"></td>
+                                        <td class="---normal" data-map-from="criticalStrike"></td>
+                                        <td class="---count" data-map-from="criticalStrike"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col col-auto bsr-spells-column">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th class="title text-center h4" colspan="2">Spells</th>
+                                    </tr>
+                                    <tr>
+                                        <th scope="col">Spell</th>
+                                        <th scope="col">Known</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">Cure Health</th>
+                                        <td data-spell-name="Cure Health"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Teleport</th>
+                                        <td data-spell-name="Teleport"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Cause Damage</th>
+                                        <td data-spell-name="Cause Damage"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Jumping</th>
+                                        <td data-spell-name="Jumping"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Etherealness</th>
+                                        <td data-spell-name="Etherealness"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Monster Summoning</th>
+                                        <td data-spell-name="Monster Summoning"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Detect Spell</th>
+                                        <td data-spell-name="Detect Spell"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Detect Enemy</th>
+                                        <td data-spell-name="Detect Enemy"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Detect Invisibility</th>
+                                        <td data-spell-name="Detect Invisibility"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Invisibility</th>
+                                        <td data-spell-name="Invisibility"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Slow Fall</th>
+                                        <td data-spell-name="Slow Fall"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Continuous Damage</th>
+                                        <td data-spell-name="Continuous Damage"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Poison</th>
+                                        <td data-spell-name="Poison"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Confusion</th>
+                                        <td data-spell-name="Confusion"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Vampiric Drain</th>
+                                        <td data-spell-name="Vampiric Drain"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Delayed Damage</th>
+                                        <td data-spell-name="Delayed Damage"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Dispel Magic</th>
+                                        <td data-spell-name="Dispel Magic"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Spell Reflection</th>
+                                        <td data-spell-name="Spell Reflection"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Spell Resistance</th>
+                                        <td data-spell-name="Spell Resistance"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Spell Absorption</th>
+                                        <td data-spell-name="Spell Absorption"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Fire Shield</th>
+                                        <td data-spell-name="Fire Shield"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Cure Poison</th>
+                                        <td data-spell-name="Cure Poison"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Shield</th>
+                                        <td data-spell-name="Shield"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Resistance</th>
+                                        <td data-spell-name="Resistance"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Slow</th>
+                                        <td data-spell-name="Slow"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Haste</th>
+                                        <td data-spell-name="Haste"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col col-auto bsr-enchantments-column">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th class="title text-center h4" colspan="2">Unique Enchanted Items</th>
+                                    </tr>
+                                    <tr>
+                                        <th scope="col">Name</th>
+                                        <th scope="col">Enchantment</th>
+                                        <th scope="col">In Inventory</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td data-item-name="Staff">Staff</td>
+                                        <td data-item-ench="of the Typos Sophia">of the Typos Sophia</td>
+                                        <td data-item-check></td>
+                                    </tr>
+                                    <tr>
+                                        <td data-item-name="Pauldron">Pauldron</td>
+                                        <td data-item-ench="of Lord Methats">of Lord Methats</td>
+                                        <td data-item-check></td>
+                                    </tr>
+                                    <tr>
+                                        <td data-item-name="Cuirass">Cuirass</td>
+                                        <td data-item-ench="of the Savior's Hide">of the Savior's Hide</td>
+                                        <td data-item-check></td>
+                                    </tr>
+                                    <tr>
+                                        <td data-item-name="Gauntlet">Gauntlet</td>
+                                        <td data-item-ench="of the Savior's Hide">of the Savior's Hide</td>
+                                        <td data-item-check></td>
+                                    </tr>
+                                    <tr>
+                                        <td data-item-name="Greave">Greave</td>
+                                        <td data-item-ench="of the Savior's Hide">of the Savior's Hide</td>
+                                        <td data-item-check></td>
+                                    </tr>
+                                    <tr>
+                                        <td data-item-name="Boot">Boot</td>
+                                        <td data-item-ench="of the Savior's Hide">of the Savior's Hide</td>
+                                        <td data-item-check></td>
+                                    </tr>
+                                    <tr>
+                                        <td data-item-name="Pauldron">Pauldron</td>
+                                        <td data-item-ench="of the Savior's Hide">of the Savior's Hide</td>
+                                        <td data-item-check></td>
+                                    </tr>
+                                    <tr>
+                                        <td data-item-name="Helmet">Helmet</td>
+                                        <td data-item-ench="of the Savior's Hide">of the Savior's Hide</td>
+                                        <td data-item-check></td>
+                                    </tr>
+                                    <tr>
+                                        <td data-item-name="Spear">Spear</td>
+                                        <td data-item-ench="of Bitter Mercy">of Bitter Mercy</td>
+                                        <td data-item-check></td>
+                                    </tr>
+                                    <tr>
+                                        <td data-item-name="Broad Sword">Broad Sword</td>
+                                        <td data-item-ench="of the Moon Reiver">of the Moon Reiver</td>
+                                        <td data-item-check></td>
+                                    </tr>
+                                    <tr>
+                                        <td data-item-name="Long Bow">Long Bow</td>
+                                        <td data-item-ench="of Heaven's Hail">of Heaven's Hail</td>
+                                        <td data-item-check></td>
+                                    </tr>
+                                    <tr>
+                                        <td data-item-name="Boot">Boot</td>
+                                        <td data-item-ench="of Peace">of Peace</td>
+                                        <td data-item-check></td>
+                                    </tr>
+                                    <tr>
+                                        <td data-item-name="Helmet">Helmet</td>
+                                        <td data-item-ench="of the Poor">of the Poor</td>
+                                        <td data-item-check></td>
+                                    </tr>
+                                    <tr>
+                                        <td data-item-name="Helmet">Helmet</td>
+                                        <td data-item-ench="of the Light Within">of the Light Within</td>
+                                        <td data-item-check></td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                     <div class="row">
@@ -42,7 +524,14 @@
                     </div>
                     <div class="row">
                         <div class="col col-auto bsr-debug-column">
-                            t
+                            <table class="table table-striped">
+                                <tbody>
+                                    <tr class="template">
+                                        <th scope="row"></th>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>

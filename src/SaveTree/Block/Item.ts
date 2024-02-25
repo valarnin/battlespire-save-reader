@@ -122,6 +122,7 @@ export default class ItemBlock extends BaseBlock implements IItemBlock, IDeseria
         this.currentLocationID = buffer[itemStructMap.currentLocationID.type](itemStructMap.currentLocationID.offset);
 
         this.name = Util.deserializeString(buffer, itemStructMap.name.offset, itemStructMap.name.length);
+        this.name = this.name.split('"')[0];
         this.itemModelID = Util.deserializeString(buffer, itemStructMap.itemModelID.offset, itemStructMap.itemModelID.length);
 
         this.currentDurability = buffer[itemStructMap.currentDurability.type](itemStructMap.currentDurability.offset);
